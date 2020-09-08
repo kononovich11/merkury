@@ -1,0 +1,354 @@
+@import 'normalize.scss';
+@import url('https://allfont.ru/allfont.css?fonts=roboto-thin');
+
+$bgDark: #0e1a35;
+$bgLight: #fff;
+
+@mixin border($color) {
+  border: 1px solid $color;
+}
+
+@mixin font {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+@mixin link {
+  color: $bgLight;
+  text-decoration: none;
+}
+
+@mixin flexbox($horizonatal, $vertical) {
+  display: flex;
+  justify-content: $horizonatal;
+  align-items: $vertical;
+}
+
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-container {
+  height: 700px;
+  padding: 65px 160px 165px;
+  background: $bgDark;
+  color: $bgLight;
+}
+
+header {
+  @include font;
+  @include flexbox(space-between, center);
+  margin-bottom: 160px;
+}
+
+.menu {
+  .menu__link {
+    @include link;
+    margin-right: 55px;
+  }
+}
+
+.btn-login {
+  width: 130px;
+  height: 50px;
+  border-radius: 100px;
+  background: $bgDark;
+  color: #5584ff;
+  cursor: pointer;
+  @include border(#5584ff);
+}
+
+.preview {
+  @include font;
+  @include column;
+  align-items: center;
+  text-align: center;
+  .preview__title {
+    font-size: 50px;
+  }
+  .preview__subtitle {
+    color: #8492af;
+    font-size: 36px;
+    margin-bottom: 90px;
+  }
+  .preview__img {
+    margin: 90px 0 135px;
+  }
+}
+
+.main-btn {
+  width: 210px;
+  height: 50px;
+  background: #5584ff;
+  color: $bgLight;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+}
+
+.cards {
+  @include flexbox(space-between, center);
+  color: $bgDark;
+  .card {
+    @include column;
+    @include flexbox(space-between, center);
+    width: 470px;
+    height: 365px;
+    .card__title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .crad__info {
+      font-size: 18px;
+      color: rgb(132, 146, 175);
+      line-height: 1.667;
+      text-align: center;
+      width: 360px;
+      height: 78px;
+      margin-bottom: 50px;
+    }
+    .card-btn {
+      width: 255px;
+      height: 50px;
+      border-radius: 100px;
+      background: $bgLight;
+      font-weight: bold;
+      color: rgb(14, 26, 53);
+      cursor: pointer;
+      @include border(rgb(132, 146, 175));
+    }
+  }
+}
+
+.about-browser {
+  @include flexbox(space-between, center);
+  color: rgb(14, 26, 53);
+  width: 110%;
+  .about-browser__title {
+    font-size: 50px;
+  }
+  .about-browser__content {
+    color: rgb(132, 146, 175);
+    font-size: 18px;
+    line-height: 1.667;
+    margin-bottom: 70px;
+    width: 540px;
+  }
+  .about-browser__steps {
+    font-size: 22px;
+    color: rgb(85, 132, 255);
+    line-height: 1.364;
+    .about-browser__text { 
+      @include flexbox(start, center);
+      margin-bottom: 45px;
+    }
+    .about-browser__checkbox {
+      margin-right: 20px;
+    }
+  }
+  .about-browser__demo {
+    margin: 150px 0;
+  }
+}
+
+.tasks__container {
+  @include flexbox(space-evenly, flex-start);
+  background :rgb(14, 26, 53);
+  position: relative;
+  right: 160px;
+  width: 120%;
+  height: 750px;
+  .tasks__cards {
+    margin-top: 170px;
+    width: 430px;
+    .tasks__title {
+      font-size: 36px;
+      margin-bottom: 25px;
+      width: 390px;
+      .tasks__count {
+        color: rgb(132, 146, 175);
+      }
+      .tasks__arrow {
+        margin-left: 150px;
+      }
+    }
+    .tasks_clicked {
+      position: relative;
+      right: 50px;
+      bottom: 50px;
+    }
+    .tasks__hand {
+      position: relative;
+      bottom: 170px;
+      left: 360px;
+    }
+  }
+  .tasks_droped {
+    @include flexbox(center, center);
+    width: 390px;
+    height: 100px;
+    border: 2px dashed rgb(132, 146, 175);
+    font-size: 20px;
+    color: rgb(132, 146, 175);
+  }
+  .tasks__info {
+    width: 515px;
+    height: 240px;
+    margin-top: 230px;
+    .tasks__title {
+      font-size: 60px;
+    }
+    .tasks__text {
+      font-size: 18px;
+      line-height: 1.667;
+    }
+  }
+}
+
+.template {
+  @include column;
+  @include flexbox(center, center);
+  .template__container {
+    text-align: center;
+    margin-top: 100px;
+    color: $bgDark;
+    width: 900px;
+    height: 150px;
+    margin-bottom: 80px;
+  }
+  .template__title {
+    font-size: 60px;
+    margin-bottom: 40px;
+  }
+  .template__text {
+    font-size: 18px;
+    color: rgb(132, 146, 175);
+  }
+  .template__description {
+    height: 800px;
+    color: $bgDark;
+    .template__card-img {
+      position: relative;
+      bottom: 250px;
+      z-index: -1;
+    }
+    .template__card {
+      width: 265px;
+      height: 150px;
+      margin-top: 180px;
+      .template__card-title {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .template__card-figure {
+        display: flex;
+      }
+      .template__card-text {
+        font-size: 18px;
+        color: rgb(132, 146, 175);
+      }
+    }
+    .template__card_second {
+      position: relative; 
+      bottom: 730px;
+      left: 1020px;
+      .template__card-figure  {
+        position: relative; 
+        right: 400px;
+      }
+    }
+  }
+}
+
+.pricing {
+  color: $bgDark;
+  .pricing__title {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .pricing__cards {
+    .pricing__card {
+      @include column;
+      @include flexbox(center, center);
+      width: 360px;
+      height: 420px;
+      box-shadow: 0 0 10px rgb(132, 146, 175);
+      .pricing__card-title {
+        font-size: 24px;
+        margin-bottom: 55px;
+      }
+      .pricing__card-price {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 55px;
+        .pricing__card-count {
+          font-size: 72px;
+        }
+        .pricing__card-period {
+          font-size: 24px;
+          font-weight: normal;
+          color: rgb(132, 146, 175);
+        }
+      }
+      .pricing__card-item {
+        @include flexbox(space-between, center);
+        width: 220px;
+        margin-bottom: 15px;
+        font-size: 18px;
+        color: rgb(132, 146, 175);
+      }
+    }
+  }
+  .pricing__info {
+    @include column;
+    @include flexbox(space-evenly, center);
+    height: 270px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(132, 146, 175);
+    line-height: 1.667;
+    .pricing__info-text {
+      width: 800px;
+    }
+  }
+}
+
+footer {
+  @include flexbox(space-between, center);
+  height: 150px;
+  background: $bgDark;
+  position: relative;
+  right: 160px;
+  width: 120%;
+  display: flex;
+  color: rgb(132, 146, 175);
+  padding: 0 150px;
+  box-sizing: border-box;
+  .footer__copyright {
+    font-size: 18px;
+  }
+  .footer__menu {
+    .footer__link {
+      color: rgb(132, 146, 175);
+      text-decoration: none;
+      margin-right: 65px;
+    }
+    .footer__media {
+      margin-right: 20px;
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .tasks__container {
+    right: 160px;
+    width: 130%;
+  }
+  footer {
+    width: 130%;
+  }
+}
+
+
